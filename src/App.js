@@ -14,6 +14,7 @@ class App extends Component {
       return (
         <Fragment>
           <div>
+            {/* for属性不能被直接使用，编译会作为for循环判错，要改为htmlFor*/}
             <label htmlFor = "labelName">输入内容：</label>
             <input id = "labelName"
                    className = "input"
