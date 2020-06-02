@@ -4,6 +4,7 @@ import './App.css';
 class App extends Component {
   constructor(props){
     super(props);
+    // 原始数据
     this.state = {
       inputValue: "",
       list: []
