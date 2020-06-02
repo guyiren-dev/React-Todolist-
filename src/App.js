@@ -14,7 +14,10 @@ class App extends Component {
       return (
         <Fragment>
           <div>
-            <input value = {this.state.inputValue}
+            <label htmlFor = "labelName">输入内容：</label>
+            <input id = "labelName"
+                   className = "input"
+                   value = {this.state.inputValue}
                    onChange = {this.handleValue.bind(this)}
             />
             <button onClick = {this.handleClickBtn.bind(this)}>提交</button>
@@ -23,8 +26,11 @@ class App extends Component {
              {this.state.list.map((item,index) => {
                return (
                  <li key = {index}
-                   onClick = {this.handleClickList.bind(this,index)} 
-               >{item}</li>
+                     onClick = {this.handleClickList.bind(this,index)}
+                     // 让标签内容不被转义 
+                     dangerouslySetInnerHTML = {{__html: item}} 
+                 >
+                 </li>
                )
              })} 
           </ul>
