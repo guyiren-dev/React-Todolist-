@@ -6,15 +6,18 @@ class TodoItem extends Component{
 				this.handleClick = this.handleClick.bind(this);
     }
     render(){
+			// 代码优化
+			  const {content} = this.props;
         return (
             <div onClick = {this.handleClick}>
-                {this.props.content}
+                {content}
             </div>
         )
 		}
-		// 子组件如何调用父组件方法来修改父组件内容
+		// 子组件如何调用父组件方法来修改父组件内容?
 		handleClick(){
-			this.props.deleteList(this.props.index)
+			const {deleteList,index} = this.props;
+			deleteList(index)
 		}
 }
 
