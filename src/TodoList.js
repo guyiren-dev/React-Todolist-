@@ -5,7 +5,7 @@ import './App.css';
 class TodoList extends Component {
   constructor(props){
     super(props);
-    // 原始数据
+    // 原始数据存放在state中
     this.state = {
       inputValue: "",
       list: []
