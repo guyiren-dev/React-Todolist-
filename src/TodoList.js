@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
+import TodoItem from './TodoItem';
 import './App.css';
 
-class App extends Component {
+class TodoList extends Component {
   constructor(props){
     super(props);
     // 原始数据
@@ -26,12 +27,12 @@ class App extends Component {
           <ul>
              {this.state.list.map((item,index) => {
                return (
-                 <li key = {index}
-                     onClick = {this.handleClickList.bind(this,index)}
-                     // 让标签内容不被转义 
-                     dangerouslySetInnerHTML = {{__html: item}} 
+                 <TodoItem content = {item}
+                           key = {index}
+                           index = {index}
+                           deleteList = {this.handleClickList.bind(this)}
                  >
-                 </li>
+                 </TodoItem>
                )
              })} 
           </ul>
@@ -58,4 +59,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default TodoList;
